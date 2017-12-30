@@ -18,7 +18,7 @@ class Form extends Component {
 		// prevents the page from refreshing when a form is submitted
 		e.preventDefault(); 
 
-		// a reduce function that returns the fields submitted as a single variable (data), which can then be passed along as a prop???
+		// a reduce function that returns the fields submitted as a single variable (data), which can be sent to update the state through the container
 		let data = this.state.fields.reduce((data, field) => {
 			data[field.name] = field.value;
 			return data;

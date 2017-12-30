@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import AddNames from './components/AddNames';
+import SubmitPlayer from './containers/SubmitPlayer';
 
 class App extends Component {
     render() {
@@ -8,7 +8,7 @@ class App extends Component {
             <div className="App">
                 <h1>Insert Title Here</h1>
                 <h2> Insert Description Here </h2>
-                <AddNames />
+                <SubmitPlayer />
             </div>
         );
     }
