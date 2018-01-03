@@ -4,7 +4,7 @@ import { commitPlayer } from "../data/actions";
 
 const mapDispatchToProps = dispatch => {
 	return {
-		// function which dispatches an action 'commitNames' taking 'data' as an argument
+		// function which dispatches an action 'commitNames' taking 'player' as an argument
 		onSubmit: data => dispatch(commitPlayer(data)),
 	};
 };

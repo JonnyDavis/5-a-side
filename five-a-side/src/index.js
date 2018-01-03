@@ -12,6 +12,19 @@ import reducer from './data/reducer';
 // creating the initial state
 const initial = Map({
 	players: List(),
+	teams: List([
+			Map({
+				teamName: 'Team One',
+				id: 1,
+				players: List(), 
+			}),
+			Map({
+				teamName: 'Team Two',
+				id: 2,
+				players: List(), 
+			}),
+	]),
+
 });
 
 // creating a store that acts as a wrapper around the state, allowing us to dispatch actions which will change the state, or subscribe to any changes so that the state will be updated.

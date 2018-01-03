@@ -7,4 +7,9 @@ export const commitPlayer = ({ playerName }) => {
 	}
 }
 
-// export const fetchPlayer
+export const setTeams = teams => {
+	return {
+		type: "setTeams",
+		teams: teams,
+	}
+}
