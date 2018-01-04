@@ -38,10 +38,9 @@ class Form extends Component {
 
 
 	render() {
-		const { button } = this.props;
 		return (
 			// mapping over the input component within the form for every field so as to display 10 individual inputs
-			<form onSubmit={ this.submit }>
+			<form className="form-group" onSubmit={ this.submit }>
 				{ this.state.fields.map(({ name, label, value }, i) => (
 					<Input
 					onChange={ (e) => this.change(e, i)}
@@ -51,10 +50,10 @@ class Form extends Component {
 					label={ label }
 					/>
 				))}
-				<button>Submit</button>
 			</form>
 		);
 	};
 };
 
 export default Form;
+

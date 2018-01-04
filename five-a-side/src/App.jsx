@@ -8,8 +8,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Insert Title Here</h1>
-                <h2> Insert Description Here </h2>
+                <h1>5-a-side</h1>
+                <p>Add the name of each player you wish to play and select 'Generate Teams' when finished</p>
                 <SubmitPlayer />
                 <PlayerProfiles />
                 <Teams />

@@ -24,8 +24,9 @@ class Teams extends Component {
 
 		return (
 			<div>
-				<button onClick={ this.createTeams }>Generate Teams</button>
-				<div>
+				<button type="button" className="btn btn-success" onClick={ this.createTeams }>Generate Teams</button>
+				<br/>
+				<div style={ teamOneContainerStyles }>
 					<h2>{ teams.getIn([0, "teamName"]) }</h2>
 					<ul>
 						{ teamOnePlayers.map(players => (
@@ -37,7 +38,7 @@ class Teams extends Component {
 				</div>
 
 
-				<div>
+				<div style={ teamTwoContainerStyles }>
 					<h2>{ teams.getIn([1, "teamName"]) }</h2>
 					<ul>
 						{ teamTwoPlayers.map(players => (
@@ -59,3 +60,15 @@ class Teams extends Component {
 }
 
 export default Teams;
+
+const teamOneContainerStyles = {
+	display: "inline-block",
+	width: "50%",
+	backgroundColor: "red",
+}
+
+const teamTwoContainerStyles = {
+	display: "inline-block",
+	width: "50%",
+	backgroundColor: "blue",
+}
