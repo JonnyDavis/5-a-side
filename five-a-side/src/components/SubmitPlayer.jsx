@@ -3,7 +3,7 @@ import PlayerForm from "./Forms/PlayerForm";
 
 // storing the fields for the Form component in a prop
 const fields = [
-	{ name: "playerName", label: "Insert Player Name", value: "" },
+	{ name: "playerName", label: "Add Player", value: "" },
 ];
 
 

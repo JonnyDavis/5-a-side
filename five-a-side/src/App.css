@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Graduate');
+
 .App {
   text-align: center;
 }
@@ -20,6 +22,20 @@
 
 .App-intro {
   font-size: large;
+}
+
+h1 {
+  font-family: 'Graduate', cursive;
+  font-size: 80px;
+}
+
+p {
+  font-size: 18px;
+  margin: 20px;
+}
+
+.Teams {
+  font-family: 'Graduate', cursive;
 }
 
 @keyframes App-logo-spin {
