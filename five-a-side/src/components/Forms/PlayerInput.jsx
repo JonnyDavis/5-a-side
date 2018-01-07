@@ -16,6 +16,7 @@ const inputStyle = {
 	backgroundColor: "#001956",
 	width: "70%",
 	margin: "0 auto",
-	color: "#F2F2F2"
+	color: "#F2F2F2",
+	borderColor: "#395396",
 
 }

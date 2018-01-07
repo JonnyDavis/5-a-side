@@ -6,12 +6,12 @@ const mapStateToProps = state => {
 	return {
 		players: state.get("players"),
 		maxPlayers: state.get("maxPlayers"),
-	}
-}
+	};
+};
 
 const mapDispatchToProps = dispatch => {
 	return {
-		// function which dispatches an action 'commitNames' taking 'player' as an argument
+		// function which dispatches an action 'commitNames' taking 'data' from the form as an argument
 		onSubmit: data => dispatch(commitPlayer(data)),
 		
 	};

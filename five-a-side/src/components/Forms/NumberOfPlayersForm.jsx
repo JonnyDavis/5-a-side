@@ -26,8 +26,8 @@ class NumberOfPlayersForm extends Component {
 
 		this.props.onSubmit(data);
 	};
-
-		change( e, i) {
+		// a change function which allows fields to be selected and then updates the fields state with said change
+	change( e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
 		this.setState({ fields: fields });
@@ -36,8 +36,11 @@ class NumberOfPlayersForm extends Component {
 
 
 	render() {
+
+		const { maxPlayers } = this.props;
+
 		return (
-			// mapping over the input component within the form for every field so as to display 10 individual inputs
+			// mapping over the fields and passing each field as a prop into the Input component
 			<form className="form-group" onSubmit={ this.submit }>
 				{ this.state.fields.map(({ name, label, value }, i) => (
 					<NumberOfPlayersInput
@@ -46,11 +49,13 @@ class NumberOfPlayersForm extends Component {
 					key={ i }
 					name={ name }
 					label={ label }
+					maxPlayers={ maxPlayers }
 					/>
 				))}
 				<button 
 				className="btn btn-success"
-				>Submit</button>
+				>Submit
+				</button>
 
 			</form>
 		);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 class Teams extends Component {
+// a component which maps out each team as list items and also displays the button used to generate said teams
+
 
 	constructor(props) {
 		super(props);
@@ -16,21 +18,34 @@ class Teams extends Component {
 
 	render() {
 
-		const { teams } = this.props;
+		const { teams, maxPlayers, players } = this.props;
 
+		// variables containing two arrays which hold the data on how the teams are split within the state
 		const teamOnePlayers = teams.getIn([0, "players"]);
 		const teamTwoPlayers = teams.getIn([1, "players"]);
 
 
+
 		return (
 			<div>
-				<button style={ buttonStyles } type="button" className="btn btn-success" onClick={ this.createTeams }>Generate Teams</button>
+				{/* The button is only enabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing */}
+				<button 
+				style={ buttonStyles } 
+				type="button" 
+				className="btn btn-success" 
+				onClick={ this.createTeams }
+				disabled={ players.size !== maxPlayers }  
+				>
+				Generate Teams
+				</button>
+				
 				<br/>
+				
 				<div style={ teamOneContainerStyles }>
 					<h2>{ teams.getIn([0, "teamName"]) }</h2>
-					<ul>
+					<ul className="list-group">
 						{ teamOnePlayers.map(players => (
-							<li>
+							<li className="list-group-item" style={ listItemStyles }>
 								{ players.get("playerName") }
 							</li>
 						))}
@@ -40,9 +55,9 @@ class Teams extends Component {
 
 				<div style={ teamTwoContainerStyles }>
 					<h2>{ teams.getIn([1, "teamName"]) }</h2>
-					<ul>
+					<ul className="list-group">
 						{ teamTwoPlayers.map(players => (
-							<li>
+							<li className="list-group-item" style={ listItemStyles }>
 								{ players.get("playerName") }
 							</li>
 						))}
@@ -67,6 +82,7 @@ const teamOneContainerStyles = {
 	borderRadius: 10,
 	backgroundColor: "#2e4889",
 	marginRight: "2.5%",
+	border: "2px solid #395396",
 }
 
 const teamTwoContainerStyles = {
@@ -75,8 +91,16 @@ const teamTwoContainerStyles = {
 	borderRadius: 10,
 	backgroundColor: "#2e4889",
 	marginLeft: "2.5%",
+	border: "2px solid #395396",
 }
 
 const buttonStyles = {
 	marginBottom: 20,
+}
+
+
+const listItemStyles = {
+	backgroundColor: "#2e4889",
+	borderColor: "#395396",
+	borderRadius: 3,
 }

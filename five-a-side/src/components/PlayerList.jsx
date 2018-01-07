@@ -3,46 +3,29 @@ import PlayerProfile from '../containers/PlayerProfile';
 
 
 class PlayerList extends Component {
+// a component which lists out each player name by mapping over the PlayerProfile component with player data taken from the state.
 
-	// constructor(props) {
-	// 	super(props);
-
-
-	// 	this.onDelete = this.onDelete.bind(this);
-	// }
-
-	// onDelete() {	
-	// 	this.props.onDelete();
-	// }
-
-// consider combining this with the Submit Player Component (list may not be needed)
 	render() {
+
 		const { players, maxPlayers } = this.props;
 
 		return (
 
 			<div>
+				{ /* a text hint which informs the user how many more players are needed to meet the total number of players set by the user */}
 				{ players.size < maxPlayers ?
 					<p> { maxPlayers - players.size } more players needed </p>
 					: <p> Congrats! All players submitted </p> 
 				}
-
+				{ /* the map only runs if the condition that there is existing data on players has been met */}
 				{players.count() ?
-					<ul>
+					<ul className="list-group" style={ listGroupStyles }>
 						{players.map(player => (
 							<PlayerProfile 
 							key={ player.get("id") }
 							id={ player.get("id")}
 							name={ player.get("playerName")}  
 							/>
-
-
-							// <li key={ player.get("id") }>
-							// 	{player.get("playerName")}
-							// 	<button className="btn btn-danger" onClick={ this.onDelete }>
-							// 		X
-							// 	</button>
-							// </li>
 						))}
 					</ul>
 
@@ -56,3 +39,13 @@ class PlayerList extends Component {
 
 
 export default PlayerList;
+
+const listGroupStyles = {
+	height: 230,
+	width: "70%",
+	margin: "0px auto",
+	textAlign: "center",
+	display: "flex",
+	flexDirection: "column",
+	flexWrap: "wrap",
+}

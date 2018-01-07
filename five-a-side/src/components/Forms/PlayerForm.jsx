@@ -30,18 +30,11 @@ class PlayerForm extends Component {
 	};
 
 	// a function that updates the value of each field as somebody types in it (allows field value to be updated)
-	// Note: come back to this and consider immutability!!?
 	change(e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
 		this.setState({ fields: fields });
 	};
-
-		changeNumberOfPlayers( e, i) {
-		let fields = this.state.numberOfPlayersFields.slice();
-		fields[i].value = e.target.value;
-		this.setState({ numberOfPlayersFields: fields });
-	}
 
 
 	render() {
@@ -49,7 +42,7 @@ class PlayerForm extends Component {
 		const { players, maxPlayers } = this.props;
 
 		return (
-			// mapping over the input component within the form for every field so as to display 10 individual inputs
+			// mapping over the fields and passing each field as a prop into the Input component
 			<form className="form-group" onSubmit={ this.submit }>
 				{ this.state.fields.map(({ name, label, value }, i) => (
 					<PlayerInput
@@ -60,11 +53,13 @@ class PlayerForm extends Component {
 					label={ label }
 					/>
 				))}
+				
+				{/* The button is disabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing.*/}
 				<button 
 				className="btn btn-success"
-				disabled={ players.size === maxPlayers }
+				disabled={ players.size === maxPlayers }	
 				>
-				Submit
+				{ maxPlayers }
 				</button>
 			</form>
 		);

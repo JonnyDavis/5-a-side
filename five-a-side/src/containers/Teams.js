@@ -9,14 +9,16 @@ const mapStateToProps = state => {
 	return {
 		teams: state.get("teams"),
 		players: state.get("players"),
-	}
-}
+		maxPlayers: state.get("maxPlayers"),
+	};
+};
 
 const mapDispatchToProps = dispatch => {
 	return {
+		// dispatching an action which will generate the teams within the app
 		createTeams: () => dispatch(setTeams()),
-	}
-}
+	};
+};
 
 
 

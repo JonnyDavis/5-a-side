@@ -3,14 +3,11 @@ import PlayerForm from "./Forms/PlayerForm";
 
 // storing the fields for the Form component in a prop
 const fields = [
-	{ name: "playerName", label: "Player Name", value: "" },
+	{ name: "playerName", label: "Insert Player Name", value: "" },
 ];
 
-const numberOfPlayersFields = [
-	{ name: "teamSize", label:"Team Size", value:""},
-];
 
-// the AddNames component.. passing through onSubmit to the form
+// the Submit Player component, used to display the form for submitting players and pass down props from the state into the form
 class SubmitPlayer extends Component {
 	render() {
 
@@ -18,7 +15,7 @@ class SubmitPlayer extends Component {
 
 		return (	
 		<div>
-			<PlayerForm onSubmit={ onSubmit } players={ players } maxPlayers={ maxPlayers } fields={ fields } numberOfPlayersFields={ numberOfPlayersFields }/>
+			<PlayerForm onSubmit={ onSubmit } players={ players } maxPlayers={ maxPlayers } fields={ fields } />
 		</div>
 		)
 	}

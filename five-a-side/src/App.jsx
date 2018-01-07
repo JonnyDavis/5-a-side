@@ -10,7 +10,10 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>5-a-side</h1>
-                <p>Add the name of each player you wish to play and select 'Generate Teams' when finished</p>
+                <p>Add the name of each player you wish to play and select 'Generate Teams' when finished. 
+                	<br/>
+                	You may also change the number of players with the dropdown menu below.
+                </p>
                 <NumberOfPlayers />
                 <SubmitPlayer />
                 <PlayerList />
