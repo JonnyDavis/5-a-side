@@ -19,8 +19,6 @@ class SubmitPlayer extends Component {
 		return (	
 		<div>
 			<PlayerForm onSubmit={ onSubmit } players={ players } maxPlayers={ maxPlayers } fields={ fields } numberOfPlayersFields={ numberOfPlayersFields }/>
-			<p> { players.size } needed </p>
-			<p> { maxPlayers } needed </p>
 		</div>
 		)
 	}

@@ -10,7 +10,7 @@ export default ({ name, label, value, onChange }) => (
 
 
 const inputContainerStyle = {
-	// lineHeight: "100%",
+	marginBottom: 15,
 }
 const inputStyle = {
 	backgroundColor: "#001956",
