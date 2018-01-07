@@ -2,6 +2,13 @@ import { connect } from "react-redux";
 import SubmitPlayer from "../components/SubmitPlayer";
 import { commitPlayer } from "../data/actions";
 
+const mapStateToProps = state => {
+	return {
+		players: state.get("players"),
+		maxPlayers: state.get("maxPlayers"),
+	}
+}
+
 const mapDispatchToProps = dispatch => {
 	return {
 		// function which dispatches an action 'commitNames' taking 'player' as an argument
@@ -11,4 +18,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(SubmitPlayer);
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitPlayer);

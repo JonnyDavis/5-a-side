@@ -5,7 +5,6 @@ export default ({ name, label, value, onChange }) => (
 	<div style={ inputContainerStyle }>
 		<label htmlFor={ name }>{ label }</label>
 		<input className="form-control" style={ inputStyle } value={ value } onChange={ onChange } id={ name } />
-		<button className="btn btn-success">Submit</button>
 	</div>
 );
 

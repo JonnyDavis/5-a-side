@@ -10,7 +10,7 @@ class PlayerProfile extends Component {
 	}
 
 	onDelete() {
-		
+
 		this.props.onDelete();
 	}
 
@@ -19,7 +19,7 @@ class PlayerProfile extends Component {
 
 		const { name, id } = this.props;
 
-		return(
+		return (
 			<li key={ id }>
 				{ name }
 				<button className="btn btn-danger" onClick={ this.onDelete }>

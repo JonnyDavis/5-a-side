@@ -17,13 +17,13 @@ class PlayerList extends Component {
 
 // consider combining this with the Submit Player Component (list may not be needed)
 	render() {
-		const { players } = this.props;
+		const { players, maxPlayers } = this.props;
 
 		return (
 
 			<div>
-				{ players.size < 10 ?
-					<p> { 10 - players.size } more players needed </p>
+				{ players.size < maxPlayers ?
+					<p> { maxPlayers - players.size } more players needed </p>
 					: <p> Congrats! All players submitted </p> 
 				}
 

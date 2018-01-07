@@ -5,6 +5,7 @@ import PlayerList from "../components/PlayerList";
 const mapStateToProps = state => {
 	return {
 		players: state.get("players"),
+		maxPlayers: state.get("maxPlayers"),
 	}
 }
 

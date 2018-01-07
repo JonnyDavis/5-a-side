@@ -21,16 +21,10 @@ export const setTeams = teams => {
 	}
 }
 
-export const setPlayers = players => {
-	return {
-		type: "setPlayers",
-		players: players,
-	}
-}
 
-export const setPlayer = player => {
+export const setNumberOfPlayers = playerNumbers => {
 	return {
-		type: "setPlayer",
-		player: player,
+		type: "setNumberOfPlayers",
+		playerNumbers: playerNumbers,
 	}
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Input from "./Input";
+import NumberOfPlayersInput from "./NumberOfPlayersInput";
 
-class Form extends Component {
+class NumberOfPlayersForm extends Component {
 	constructor(props) {
 		super(props);
 
@@ -10,7 +10,6 @@ class Form extends Component {
 		this.state = {
 		// maps over each field and adds a value property
 			fields: props.fields.slice(),
-			// teamSizeFields: props.teamSizeFields.slice(),
 		};
 
 	};
@@ -18,26 +17,22 @@ class Form extends Component {
 	submit(e) {
 		// prevents the page from refreshing when a form is submitted
 		e.preventDefault(); 
-
-		// let fields = this.state.fields.concat(this.state.teamSizeFields);
-
+		
 		// a reduce function that returns the fields submitted as a single variable (data), which can be sent to update the state through the container
 		let data = this.state.fields.reduce((data, field) => {
-			data[field.name] = field.value;
+			data = field.value;
 			return data;
 		}, {});
 
 		this.props.onSubmit(data);
-		console.log(data);
 	};
 
-	// a function that updates the value of each field as somebody types in it (allows field value to be updated)
-	// Note: come back to this and consider immutability!!?
-	change(e, i) {
+		change( e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
 		this.setState({ fields: fields });
-	};
+	}
+
 
 
 	render() {
@@ -45,18 +40,21 @@ class Form extends Component {
 			// mapping over the input component within the form for every field so as to display 10 individual inputs
 			<form className="form-group" onSubmit={ this.submit }>
 				{ this.state.fields.map(({ name, label, value }, i) => (
-					<Input
-					onChange={ (e) => this.change(e, i)}
+					<NumberOfPlayersInput
+					onChange={ (e) => this.change(e, i) }
 					value={ value }
 					key={ i }
 					name={ name }
 					label={ label }
 					/>
 				))}
+				<button 
+				className="btn btn-success"
+				>Submit</button>
+
 			</form>
 		);
 	};
 };
 
-export default Form;
-
+export default NumberOfPlayersForm;

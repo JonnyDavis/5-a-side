@@ -24,6 +24,7 @@ const initial = Map({
 				players: List(), 
 			}),
 	]),
+	maxPlayers: 10,
 
 });
 
