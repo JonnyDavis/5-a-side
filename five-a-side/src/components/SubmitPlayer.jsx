@@ -15,7 +15,11 @@ class SubmitPlayer extends Component {
 
 		return (	
 		<div>
-			<PlayerForm onSubmit={ onSubmit } players={ players } maxPlayers={ maxPlayers } fields={ fields } />
+			<PlayerForm
+			onSubmit={ onSubmit }
+			players={ players } 
+			maxPlayers={ maxPlayers } 
+			fields={ fields } />
 		</div>
 		)
 	}

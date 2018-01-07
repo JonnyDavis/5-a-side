@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 class Teams extends Component {
 // a component which maps out each team as list items and also displays the button used to generate said teams
-
-
 	constructor(props) {
 		super(props);
 
@@ -24,17 +22,22 @@ class Teams extends Component {
 		const teamOnePlayers = teams.getIn([0, "players"]);
 		const teamTwoPlayers = teams.getIn([1, "players"]);
 
+		// let buttonDisabled = players.size !== maxPlayers ? 1 : 2;
 
+		// let players.size = playerNo;
+		// let 
 
 		return (
 			<div style={teamsContainerStyles} >
-				{/* The button is only enabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing */}
+				{/* The button is only enabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing 
+				Note: disabled condition had to be commented out as it does not work when the user manually updates the maximum players and don't know why? - means that other errors can happen.
+				*/}
 				<button 
 				style={ buttonStyles } 
 				type="button" 
 				className="btn btn-success" 
 				onClick={ this.createTeams }
-				disabled={ players.size !== maxPlayers }  
+				disabled={ false /* players.size !== maxPlayers */}  
 				>
 				Generate Teams
 				</button>

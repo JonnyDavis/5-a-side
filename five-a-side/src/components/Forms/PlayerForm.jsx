@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PlayerInput from "./PlayerInput";
-import NumberOfPlayersInput from "./NumberOfPlayersInput";
 
 class PlayerForm extends Component {
 	constructor(props) {
@@ -55,11 +54,11 @@ class PlayerForm extends Component {
 				))}
 				
 				{/* The button is disabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing.
-				Note: This only works at the default max value of '10' but not once the user has manually changed the max value. Currently unable to work out why as the max value being passed down does update following a change from the user. ????
+				Note: disabled condition had to be commented out as it does not work when the user manually updates the maximum players and don't know why? - means that other errors can happen.
 				*/}
 				<button 
 				className="btn btn-success"
-				disabled={ players.size === maxPlayers }	
+				disabled={ false /* players.size === maxPlayers */ }	
 				>
 				Submit
 				</button>

@@ -11,6 +11,7 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2"
   },
+  "main": "bundle.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
