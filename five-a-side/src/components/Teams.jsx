@@ -27,7 +27,7 @@ class Teams extends Component {
 
 
 		return (
-			<div>
+			<div style={teamsContainerStyles} >
 				{/* The button is only enabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing */}
 				<button 
 				style={ buttonStyles } 
@@ -103,4 +103,9 @@ const listItemStyles = {
 	backgroundColor: "#2e4889",
 	borderColor: "#395396",
 	borderRadius: 3,
+}
+
+const teamsContainerStyles = {
+	marginTop: 20,
+	marginBottom: 50,
 }
