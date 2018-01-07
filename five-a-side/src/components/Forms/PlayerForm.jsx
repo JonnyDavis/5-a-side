@@ -25,7 +25,6 @@ class PlayerForm extends Component {
 		}, {});
 
 		this.props.onSubmit(data);
-		console.log(data);
 	};
 
 	// a function that updates the value of each field as somebody types in it (allows field value to be updated)
