@@ -54,12 +54,14 @@ class PlayerForm extends Component {
 					/>
 				))}
 				
-				{/* The button is disabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing.*/}
+				{/* The button is disabled once the condition that the number of players added equals the total players set is met. This prevents the app from crashing.
+				Note: This only works at the default max value of '10' but not once the user has manually changed the max value. Currently unable to work out why as the max value being passed down does update following a change from the user. ????
+				*/}
 				<button 
 				className="btn btn-success"
 				disabled={ players.size === maxPlayers }	
 				>
-				{ maxPlayers }
+				Submit
 				</button>
 			</form>
 		);
