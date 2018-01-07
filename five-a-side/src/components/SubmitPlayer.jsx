@@ -6,10 +6,14 @@ const fields = [
 	{ name: "playerName", label: "Player Name", value: "" },
 ];
 
+// const teamSizeFields = [
+// 	{ name: "teamSize", label:"Team Size", value:""},
+// ];
+
 // the AddNames component.. passing through onSubmit to the form
 const SubmitPlayer = ({ onSubmit }) => (
 	<div>
-		<Form onSubmit={ onSubmit } fields={ fields } />
+		<Form onSubmit={ onSubmit } fields={ fields } /*teamSizeFields={ teamSizeFields }*//>
 	</div>
 );
 

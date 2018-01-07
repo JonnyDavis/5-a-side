@@ -10,6 +10,7 @@ class Form extends Component {
 		this.state = {
 		// maps over each field and adds a value property
 			fields: props.fields.slice(),
+			// teamSizeFields: props.teamSizeFields.slice(),
 		};
 
 	};
@@ -17,6 +18,8 @@ class Form extends Component {
 	submit(e) {
 		// prevents the page from refreshing when a form is submitted
 		e.preventDefault(); 
+
+		// let fields = this.state.fields.concat(this.state.teamSizeFields);
 
 		// a reduce function that returns the fields submitted as a single variable (data), which can be sent to update the state through the container
 		let data = this.state.fields.reduce((data, field) => {

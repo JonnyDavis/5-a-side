@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
-
-import PlayerProfiles from "../components/PlayerProfiles";
+import PlayerList from "../components/PlayerList";
 
 // returns an object (players), which gets passed in as props to the connected component
 const mapStateToProps = state => {
@@ -9,6 +8,11 @@ const mapStateToProps = state => {
 	}
 }
 
+// const mapDispatchToProps = dispatch => {
+// 	return {
+// 		onLoad: () => dispatch(setPlayers)
+// 	}
+// }
 
 
-export default connect(mapStateToProps)(PlayerProfiles);
+export default connect(mapStateToProps)(PlayerList);

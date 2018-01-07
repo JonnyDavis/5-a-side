@@ -6,6 +6,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		// function which dispatches an action 'commitNames' taking 'player' as an argument
 		onSubmit: data => dispatch(commitPlayer(data)),
+		
 	};
 };
 

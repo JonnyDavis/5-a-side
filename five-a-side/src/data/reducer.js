@@ -18,9 +18,12 @@ const commitPlayer = (state, data) => {
 	if (state.get("players").size < 10) {
 		return state.update("players", players => players.push(createPlayer(data)));
 	}
-
-
 }
+
+const deletePlayer = (state, { id }) => {
+	return state.update("players", players => players.filter(( player ) => player.get("id") !== +id));
+}
+
 
 
  const createTeams = ( players ) => {
@@ -88,6 +91,7 @@ const setTeams = (state) => {
 const reducer = (state, action) => {
     switch (action.type) {
     	case "commitPlayer": return commitPlayer(state, action);
+    	case "deletePlayer": return deletePlayer(state, action);
     	case "setTeams": return setTeams(state);
         default: return state;
     }

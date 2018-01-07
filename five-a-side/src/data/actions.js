@@ -7,9 +7,30 @@ export const commitPlayer = ({ playerName }) => {
 	}
 }
 
+export const deletePlayer = id => {
+	return {
+		type: "deletePlayer",
+		id: id,
+	}
+}
+
 export const setTeams = teams => {
 	return {
 		type: "setTeams",
 		teams: teams,
+	}
+}
+
+export const setPlayers = players => {
+	return {
+		type: "setPlayers",
+		players: players,
+	}
+}
+
+export const setPlayer = player => {
+	return {
+		type: "setPlayer",
+		player: player,
 	}
 }
