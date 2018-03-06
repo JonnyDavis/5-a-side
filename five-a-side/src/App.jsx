@@ -17,7 +17,7 @@ class App extends Component {
                 <NumberOfPlayers />
                 <SubmitPlayer />
                 <PlayerList />
-                <Teams className="Teams" />
+                <Teams />
             </div>
         );
     }

@@ -18,6 +18,8 @@ const commitPlayer = (state, data) => {
 	if (state.get("players").size < state.get("maxPlayers")) {
 		// pushes each new player into the players array stored in the state
 		return state.update("players", players => players.push(createPlayer(data)));
+	} else {
+		return state;
 	}
 }
 
